@@ -13,14 +13,14 @@ void counter::count() {
         }
         else {
 //             test = 66;
-            wait();
+            //wait();
             test = 88;
             cnt_int += 1;
             if (cnt_int==100) {
                 cnt_int = 0;
             }
             cnt.write(cnt_int);
-            //wait();
+            wait();
         }
     }
 	// ####################### UP TO HERE ####################### //

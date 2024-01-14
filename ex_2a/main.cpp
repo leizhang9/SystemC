@@ -43,19 +43,17 @@ int sc_main(int argc, char *argv[]) {
     sc_trace(tf, clk, "clock");
     sc_trace(tf, empty, "empty");
     sc_trace(tf, fi1.fill_level, "fifo_fill_level");
-    sc_trace(tf, co1.fetch, "co1.fetch");
-    sc_trace(tf, rd_en, "rd_en");
-    sc_trace(tf, co1.data_valid, "co1.data_valid");
-//     sc_trace(tf, fi1.wr_ptr, "wr_ptr"); //private member cannot be traced
-	sc_trace(tf, d_out, "d_in_for_consumer");
-    
-    sc_trace(tf, clk, "clock"); //not wrong, but not displayed
     sc_trace(tf, full, "full");
-	sc_trace(tf, wr_en, "wr_en");
-    sc_trace(tf, d_in, "d_out_for_producer"); //cannot contain space!!!!
-    sc_trace(tf, pr1.send, "pr1.send");
-	//sc_trace(tf, co1.test, "co1.test");
-
+    sc_trace(tf, d_in, "fifo_in");
+    sc_trace(tf, d_out, "fifo_out");
+    sc_trace(tf, rd_en, "rd_en");
+    sc_trace(tf, wr_en, "wr_en");
+    sc_trace(tf, co1.data_valid, "co1.data_valid");
+    //sc_trace(tf, fi1.wr_ptr, "wr_ptr"); //private member cannot be traced
+    //sc_trace(tf, clk, "clock"); //not wrong, but not displayed
+    
+    sc_trace(tf, co1.fetch, "fetch");
+    sc_trace(tf, pr1.send, "send");
 	// ####################### UP TO HERE ####################### //
 
 	sc_time sim_dur = sc_time(5000, SC_NS);

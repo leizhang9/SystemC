@@ -5,8 +5,8 @@ void bcd_decoder::decode() {
     unsigned short int val_int;
     char hi_int, lo_int;
     val_int = val.read();
-    hi_int = val_int/10 + '0';
-    lo_int = val_int%10 + '0';
+    hi_int = val_int/10;
+    lo_int = val_int%10;
     hi.write(hi_int);
     lo.write(lo_int);
     

@@ -24,7 +24,7 @@ fifo_1a::fifo_1a(sc_module_name name, unsigned int fifo_size) : fifo_size(fifo_s
 	// initialize output ports
     full.initialize(false);
     empty.initialize(true);
-    d_out.initialize(0); //??
+    d_out.initialize(-1); 
 	// ####################### UP TO HERE ####################### //
 }
 
@@ -32,10 +32,10 @@ void fifo_1a::write_fifo() {
 	// ############# COMPLETE THE FOLLOWING SECTION ############# //
     while(true) {
         wait();
-        if (wr_en.read() && !full.read()) {  //can i read the output signal??
+        if (wr_en.read() && !full.read()) {  
             *(fifo_data + wr_ptr) = d_in.read(); //fifo_data is unsigned char *
             std::cout<<std::setw(9)<<sc_time_stamp()<< name()<<" write: "<<(int)d_in.read()<<" at wr_ptr "<<wr_ptr<<" fill_level is: "<<fill_level<<std::endl;
-            wr_ptr = (wr_ptr + 1)%fifo_size;  // signal how to read and write??
+            wr_ptr = (wr_ptr + 1)%fifo_size;
             fill_level++;
         }
     }
