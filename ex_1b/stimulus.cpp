@@ -12,9 +12,11 @@ void stimulus::c_gen() {
 }
 
 void stimulus::r_gen() {
+    bool rst = false; ///
+    rst_n.write(!rst); ///
     wait(10, SC_NS);
-	bool rst = false;
-	rst_n.write(!rst);  //ge36cig why !rst??
+	rst = true;
+	rst_n.write(!rst);  //ge36cig why !rst??  ok
 	wait(17, SC_NS);
 	rst = true;
 	rst_n.write(!rst);

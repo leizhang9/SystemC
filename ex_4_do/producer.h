@@ -1,3 +1,4 @@
+//#define SC_INCLUDE_DYNAMIC_PROCESSES   is it needed?
 #include "systemc.h"
 #include "tlm.h"
 #include "tlm_utils/simple_initiator_socket.h"
@@ -11,7 +12,7 @@ SC_MODULE(producer) {
 public:
 	// ############# COMPLETE THE FOLLOWING SECTION ############# //
 	// initiator socket to connect producer to FIFO
-
+    simple_initiator_socket<producer> prod2fifo_socket;
 	// ####################### UP TO HERE ####################### //
 
 private:

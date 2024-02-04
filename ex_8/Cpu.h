@@ -159,6 +159,13 @@ private:
 	 * @param header - Pointer to an IP packet.
 	 */
 	void updateChecksum(IpPacket& header);
+    
+    //declaration for ex8
+    void startTransactionTiming(tlm_command command, soc_address_t address,
+			unsigned char *data, unsigned int dataSize);
+    void discardDescriptor();
+    void discardDescriptorTiming();
+    
 
 public:
 	/**

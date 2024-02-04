@@ -7,9 +7,9 @@ using namespace std;
 
 // ############# COMPLETE THE FOLLOWING SECTION ############# //
 // complete constructor parameters
-Accelerator::Accelerator() :
+Accelerator::Accelerator(sc_module_name name, unsigned int cycles) :
 	// enter the required initializationes here
-
+    ACC_IP_LOOKUP_CYCLES(cycles),
 // ####################### UP TO HERE ####################### //
 
 		// further initializations - leave them as they are

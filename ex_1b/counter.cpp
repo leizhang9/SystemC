@@ -7,8 +7,11 @@ void counter::count() {
     while(true) {
         if (!rst_n) {
             //wait(); //here, wait() will wait for extra a change of clk.pos or rst.neg
-            cnt_int = 0;
-            cnt.write(cnt_int);
+//             cnt_int = 0;
+            cnt.write(99);
+//             if(cnt.read() == 99) {  //will be assigned after a delta cycle
+//                 cnt.write(55);
+//             }   
             wait(); //wait for clk.pos or rst_n.neg
         }
         else {

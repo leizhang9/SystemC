@@ -159,6 +159,8 @@ private:
 	 * @param header - Pointer to an IP packet.
 	 */
 	void updateChecksum(IpPacket& header);
+    
+    void discardDescriptor();
 
 public:
 	/**

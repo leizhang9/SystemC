@@ -16,7 +16,8 @@ public:
     int test = 0;
 	SC_CTOR(counter) {
 		SC_THREAD(count);
-		sensitive << clk.pos() << rst_n.neg();
+// 		sensitive << clk.pos() << rst_n.neg();
+        sensitive << clk.pos();
         //sensitive<<rst_n;  //ge36cig test
 		cnt_int = 0;
 	}
