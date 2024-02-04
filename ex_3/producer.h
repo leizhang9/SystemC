@@ -4,7 +4,7 @@
 // ############# COMPLETE THE FOLLOWING SECTION ############# //
 // include the necessary header files
 #include "systemc.h"
-#include "fifo_if.h"
+#include "fifo_if.h"  //should incldue header file of interface
 // ####################### UP TO HERE ####################### //
 
 SC_MODULE(producer) {
@@ -12,7 +12,7 @@ SC_MODULE(producer) {
 public:
 	// ############# COMPLETE THE FOLLOWING SECTION ############# //
 	// declare the port of the module
-    sc_port<fifo_if> prod2fifo_port;
+    sc_port<fifo_if>  prod2fifo_port;
 	// ####################### UP TO HERE ####################### //
 
 private:

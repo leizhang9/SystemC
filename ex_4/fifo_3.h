@@ -13,7 +13,7 @@ public:
 	// ############# COMPLETE THE FOLLOWING SECTION ############# //
 	// target sockets to connect FIFO with producer and consumer
     simple_target_socket<fifo_3> fifo2prod_socket;
-	simple_target_socket<fifo_3> fifo2consum_socket;
+    simple_target_socket<fifo_3> fifo2consum_socket;
 	// ####################### UP TO HERE ####################### //
 
 private:
@@ -21,7 +21,6 @@ private:
 	unsigned char *fifo_data;
 	unsigned int wr_ptr, rd_ptr;
 	unsigned int fill_level;
-
 	// we use two PEQs, one for read transactions and one for write transactions
 	peq_with_get<tlm_generic_payload> r_peq;
 	peq_with_get<tlm_generic_payload> w_peq;
@@ -47,6 +46,6 @@ public:
 	// ############# COMPLETE THE FOLLOWING SECTION ############# //
 	// constructor declaration
     SC_HAS_PROCESS(fifo_3);
-	fifo_3(sc_module_name name, unsigned int fifo_size=50);
+    fifo_3(sc_module_name name, unsigned int fifo_size);
 	// ####################### UP TO HERE ####################### //
 };

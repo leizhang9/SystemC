@@ -4,7 +4,7 @@
 // ############# COMPLETE THE FOLLOWING SECTION ############# //
 // include the necessary header files
 #include "systemc.h"
-#include "fifo_if.h"
+#include "fifo_if.h"  //hierarchical channel.h should include interface.h
 // ####################### UP TO HERE ####################### //
 
 class fifo_2: public fifo_if, public sc_module {
@@ -24,9 +24,7 @@ public:
 
 	// ############# COMPLETE THE FOLLOWING SECTION ############# //
 	// constructor declaration
-private:
     SC_HAS_PROCESS(fifo_2);
-public:
     fifo_2(sc_module_name name, unsigned int fifo_size);
 	// ####################### UP TO HERE ####################### //
 };

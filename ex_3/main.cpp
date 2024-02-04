@@ -8,8 +8,8 @@ int sc_main(int argc, char *argv[]) {
 	// ############# COMPLETE THE FOLLOWING SECTION ############# //
 	// instantiate and connect the modules
     producer pr1("producer");
-    consumer co1("consumer");
     fifo_2 fi1("fifo_2", 50);
+    consumer co1("consumer");
     pr1.prod2fifo_port(fi1);
     co1.consum2fifo_port(fi1);
 	// ####################### UP TO HERE ####################### //

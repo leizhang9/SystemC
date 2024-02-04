@@ -8,11 +8,10 @@ int sc_main(int argc, char *argv[]) {
 	// ############# COMPLETE THE FOLLOWING SECTION ############# //
 	// instances of the modules
     producer pr1("producer");
-	consumer co1("consumer");
-	fifo_3 fi1("fifo");
-
-	pr1.prod2fifo_socket.bind(fi1.fifo2prod_socket);
-	co1.consum2fifo_socket.bind(fi1.fifo2consum_socket);
+    fifo_3 fi1("fifo_3", 50);  //with parameter
+    consumer co1("consumer");
+    pr1.prod2fifo_socket.bind(fi1.fifo2prod_socket);
+    co1.consum2fifo_socket.bind(fi1.fifo2consum_socket);
 	// ####################### UP TO HERE ####################### //
 
 	// simulation duration may be modified by command line parameter

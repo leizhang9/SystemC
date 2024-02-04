@@ -27,20 +27,11 @@ bool fifo_2::write_fifo(unsigned char *data, unsigned int &count) {
 
 	// ############# COMPLETE THE FOLLOWING SECTION ############# //
 	// complete process
-    wait(100*len, SC_NS);
+    wait(100 * len, SC_NS);
     memcpy(fifo_data + wr_ptr, ptr, len);
-
-    count = len;
-    wr_ptr = (wr_ptr + len)%fifo_size;
+    wr_ptr = (wr_ptr + len) % fifo_size;
     fill_level += len;
-    
-    cout << std::setw(9) << sc_time_stamp() << ": '" << name()<<"'\t"<<len << " words were written: 0x "; 
-    cout<<hex;
-    for(unsigned int i = 0; i < count; i++) {
-        cout<< std::setw(2) << std::setfill('0')<<(int)*(ptr + i)<<" ";
-    }
-    cout<<dec;
-    cout<<endl;
+    count = len;
 	// ####################### UP TO HERE ####################### //
 	if(fifo_size <= 50)
 		output_fifo_status();
@@ -64,25 +55,11 @@ bool fifo_2::read_fifo(unsigned char *data, unsigned int &count) {
 
 	// ############# COMPLETE THE FOLLOWING SECTION ############# //
 	// complete process
-    wait(100*len, SC_NS);
+    wait(100 * len, SC_NS);
     memcpy(ptr, fifo_data + rd_ptr, len);
-
-    count = len;
-    rd_ptr = (rd_ptr + len)%fifo_size;
+    rd_ptr = (rd_ptr + len) % fifo_size;
     fill_level -= len;
-    
-    if (len == 0) {
-        cout << std::setw(9) << sc_time_stamp() << ": '" << name()<<"'\t"<<"empty - no data has been read";
-    }
-    else {
-        cout << std::setw(9) << sc_time_stamp() << ": '" << name()<<"'\t"<<len << " words were read: 0x ";
-    }
-    cout<<hex;
-    for(unsigned int i = 0; i < len; i++) {
-        cout <<std::setw(2) << std::setfill('0')<< (int)*(ptr + i)<<" ";
-    }
-    cout<<dec;
-    cout<<endl;
+    count = len;
 	// ####################### UP TO HERE ####################### //
 	if(fifo_size <= 50)
 		output_fifo_status();
